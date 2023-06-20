@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Socket.io webSockets
 const httpServer = app.listen(port, () => {
-  console.log(`🍕 App listening on port ➡️  http://localhost:${port}`);
+  console.log(`App listening on port ➡️  http://localhost:${port}`);
 });
 
 /* Connet to Mongo */
@@ -37,7 +37,7 @@ app.use(cookieParser());
 /* Session */
 app.use(
   session({
-    store: MongoStore.create({ mongoUrl: 'mongodb+srv://maurogarrodev:Aguantela73@coderbackend.1nd8mzz.mongodb.net/ecommerce', ttl: 7200 }),
+    store: MongoStore.create({ mongoUrl: 'mongodb+srv://Jsanchez:Flordiaz890820@atlascluster.z0mmpcl.mongodb.net/?retryWrites=true&w=majority', ttl: 7200 }),
     secret: 'un-re-secreto',
     resave: true,
     saveUninitialized: true,
