@@ -13,3 +13,11 @@ export function isAdmin(req, res, next) {
     }
     return res.status(401).render('error', { error: 'Error de autenticación' });
   }
+
+  export function auth(req,res,next){
+    if(req.session?.email !== 'adminCoder@coder.com' || !req.session?.admin === 'admin'){
+        next ()
+    }
+    res.status(401).send('Rol usuario')
+}
+

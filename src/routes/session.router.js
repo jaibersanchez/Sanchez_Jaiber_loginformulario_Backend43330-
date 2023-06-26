@@ -15,12 +15,22 @@ sessionRouter.get('/', (req, res) => {
 sessionRouter.get('/login', (req, res) => {
   /* console.log(req.session.user, req.session.admin); */
   const { username, password } = req.query;
-  if (username !== 'pepe' || password !== 'pepepass') {
+  if (username !== 'Jaiber' || password !== 'pepepass') {
     return res.send('login failed');
   }
   req.session.user = username;
   req.session.admin = true;
   res.send('login success!');
+});
+
+sessionRouter.get('/auth', (req, res) => {
+
+  const { email, password } = req.query;
+  if (email === "adminCoder@coder.com" && password === "adminCod3r123") {
+    req.session.user = username;
+  req.session.admin = true;
+  res.send('login success!');
+  }
 });
 
 sessionRouter.get('/logout', (req, res) => {
