@@ -31,6 +31,7 @@ sessionRouter.get('/auth', (req, res) => {
   req.session.admin = true;
   res.send('login success!');
   }
+  res.redirect('/products'); 
 });
 
 sessionRouter.get('/logout', (req, res) => {
